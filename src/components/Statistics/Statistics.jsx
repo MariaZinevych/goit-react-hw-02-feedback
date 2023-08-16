@@ -6,6 +6,7 @@ export const Statictics = ({
   bad,
   onClick,
   onTotal,
+  onGoodfeedbach,
 
   //   onClickGood,
   //   onClickNeutral,
@@ -44,7 +45,7 @@ export const Statictics = ({
         <li>Neutral {neutral}</li>
         <li>Bad {bad}</li>
         <li>Total {onTotal()}</li>
-        <li>PositivePercentage </li>
+        <li>PositivePercentage {onGoodfeedbach()} % </li>
       </ul>
     </Container>
   );

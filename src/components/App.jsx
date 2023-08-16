@@ -35,6 +35,12 @@ export class App extends Component {
     return good + neutral + bad;
   };
 
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    const totalfeedbach = this.countTotalFeedback();
+    return Math.round((good / totalfeedbach) * 100) || 0;
+  };
+
   render() {
     return (
       <>
@@ -47,6 +53,7 @@ export class App extends Component {
           neutral={this.state.neutral}
           bad={this.state.bad}
           onTotal={this.countTotalFeedback}
+          onGoodfeedbach={this.countPositiveFeedbackPercentage}
         />
         <Feedbacks></Feedbacks>
         <GlobalStyle />
