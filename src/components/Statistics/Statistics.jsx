@@ -1,3 +1,4 @@
+import { Feedbacks } from 'components/FeedbackOption/FeedbackOptions ';
 import { Container } from './Statistics.styled';
 
 export const Statictics = ({
@@ -7,38 +8,11 @@ export const Statictics = ({
   onClick,
   onTotal,
   onGoodfeedbach,
-
-  //   onClickGood,
-  //   onClickNeutral,
-  //   onClickbad,
 }) => {
   return (
     <Container>
-      <h1> Please leave feedback </h1>
-      <button
-        type="submit"
-        onClick={() => {
-          onClick('good');
-        }}
-      >
-        Good
-      </button>
-      <button
-        type="submit"
-        onClick={() => {
-          onClick('neutral');
-        }}
-      >
-        Neutral
-      </button>
-      <button
-        type="submit"
-        onClick={() => {
-          onClick('bad');
-        }}
-      >
-        Bad
-      </button>
+      <Feedbacks onClick={onClick} />
+
       <h2>Statistics</h2>
       <ul>
         <li>Good {good} </li>
