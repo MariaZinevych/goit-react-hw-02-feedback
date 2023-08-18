@@ -1,7 +1,10 @@
-export const Section = () => {
+import { SectionTitle, SectionWrap } from './section.styled';
+
+export const Section = ({ title, children }) => {
   return (
-    <>
-      <h1> Please leave feedback </h1>
-    </>
+    <SectionWrap>
+      <SectionTitle>{title}</SectionTitle>
+      {children}
+    </SectionWrap>
   );
 };

@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import { Statictics } from './Statistics/Statistics';
 import { GlobalStyle } from 'Global.styled';
+import { Feedbacks } from './FeedbackOption/FeedbackOptions ';
+import { Section } from './Section/section';
+import { Notification } from './Notification/Notification';
 
 export class App extends Component {
   state = {
@@ -27,14 +30,22 @@ export class App extends Component {
   render() {
     return (
       <>
-        <Statictics
-          onClick={this.handleOnClick}
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          onTotal={this.countTotalFeedback}
-          onGoodfeedbach={this.countPositiveFeedbackPercentage}
-        />
+        <Section title="Please leave a feedbeack">
+          <Feedbacks onClick={this.handleOnClick} />
+        </Section>
+        <Section title="Statistics">
+          {this.countTotalFeedback() !== 0 ? (
+            <Statictics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              onTotal={this.countTotalFeedback}
+              onGoodfeedback={this.countPositiveFeedbackPercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
 
         <GlobalStyle />
       </>

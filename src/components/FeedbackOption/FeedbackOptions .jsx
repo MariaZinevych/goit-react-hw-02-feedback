@@ -1,6 +1,8 @@
+import { ContainerButton } from './FeedbackOptions.styled';
+
 export const Feedbacks = ({ onClick }) => {
   return (
-    <>
+    <ContainerButton>
       {/* <h1> Please leave feedback </h1> */}
       <button
         type="submit"
@@ -26,6 +28,6 @@ export const Feedbacks = ({ onClick }) => {
       >
         Bad
       </button>
-    </>
+    </ContainerButton>
   );
 };
