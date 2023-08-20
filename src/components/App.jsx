@@ -28,10 +28,11 @@ export class App extends Component {
   };
 
   render() {
+    const options = Object.keys(this.state);
     return (
       <>
         <Section title="Please leave a feedbeack">
-          <Feedbacks onClick={this.handleOnClick} />
+          <Feedbacks options={options} onClick={this.handleOnClick} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() !== 0 ? (
